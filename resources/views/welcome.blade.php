@@ -90,8 +90,13 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
 
-                <?php $games = IGDB::getGame(9630, ['name', 'release_dates', 'esrb', 'genres'], $limit = 10, $offset = 0, $order = 'release_dates.date:desc'); var_dump($games);
-?>
+                <?php 
+                    $games = IGDB::searchGames('dark souls');
+                    foreach ($games as $k) {
+                        echo $k->name . "<br/>";
+                    }
+                ?>
+
             </div>
         </div>
     </body>
