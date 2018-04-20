@@ -13,14 +13,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <?php
-                        //Test d'affichage de jeux avec la recherche 'dark souls' 
-                        $games = IGDB::searchGames('zelda');
-                        foreach ($games as $k) {
-                            echo $k->name . "<br/>";
-                        }
-                    ?>
+                    
+                    @foreach ($games as $game)
+                        <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="{{$game->image}}" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">{{$game->name}}</p>
+                          </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

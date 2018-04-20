@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Gamepack;
+use App\Game;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $gamepacks = Gamepack::find(1);
+        $games = Game::where('gamepack_id', 1)->get();
+        return view('home', ["gamepacks" => $gamepacks, "games" => $games]);
     }
 }

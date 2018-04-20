@@ -17,7 +17,7 @@ class CreateGamepacksTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->string('games_amount')->unique();
+            $table->string('games_amount')->nullable();
             $table->timestamps();
         });
     }

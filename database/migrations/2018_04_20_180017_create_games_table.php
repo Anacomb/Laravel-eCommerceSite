@@ -16,12 +16,12 @@ class CreateGamesTable extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('category');
-            $table->date('release_date');
-            $table->string('price');
+            $table->longText('description')->nullable();
+            $table->string('genre');
+            $table->string('release_date');
             $table->string('image');
             $table->integer('gamepack_id')->unsigned();
-            $table->foreign('gamepack_id')->references('id')->on('gamepacks');
+            $table->foreign('gamepack_id')->references('id')->on('gamepacks')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -33,6 +33,10 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
+        Schema::table('games', function(Blueprint $table) {
+            $table->dropForeign('gamepack_id');
+        });
+
         Schema::dropIfExists('games');
     }
 }
