@@ -88,15 +88,7 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-
-                <?php 
-                    $games = IGDB::searchGames('dark souls');
-                    foreach ($games as $k) {
-                        echo $k->name . "<br/>";
-                    }
-                ?>
-
+                </div>        
             </div>
         </div>
     </body>

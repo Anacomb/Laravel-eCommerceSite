@@ -14,7 +14,13 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <?php
+                        //Test d'affichage de jeux avec la recherche 'dark souls' 
+                        $games = IGDB::searchGames('zelda');
+                        foreach ($games as $k) {
+                            echo $k->name . "<br/>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
