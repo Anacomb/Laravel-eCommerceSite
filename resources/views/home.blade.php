@@ -11,12 +11,8 @@
                     </div>
                 @endif
 
-                @php 
-                    //var_dump(IGDB::searchGames('Dark Souls', ['*'], $limit = 1, $offset = 0, $order = 'name')); 
-                @endphp
-
                 @foreach ($gamepacks as $gamepack)
-                    <div class="card bg-dark" style="padding:10px; width: 322px; height: 100%; margin: 20px;">
+                    <div class="gamepack card bg-dark">
                         <div style="display: inline-table;">    
                             @foreach ($games[$gamepack->id] as $game)
                                 @if ($loop->iteration <= 4)
