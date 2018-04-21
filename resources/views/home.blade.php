@@ -26,7 +26,11 @@
                         <a class="btn btn-primary" href="./packs/{{$gamepack->slug}}" role="button">Plus d'informations</a>
                     </div>
                 @endforeach
-            </div>
+
+            </div>            
+        </div>
+        <div class="justify-content-center">
+            {{ $gamepacks->links() }}     
         </div>
     </div>
 </div>
