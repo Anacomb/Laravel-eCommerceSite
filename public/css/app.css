@@ -14,7 +14,7 @@
  	margin: 20px;
  }
 
- .py-4 { 
+ body { 
 	background: url(../images/bckg.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
