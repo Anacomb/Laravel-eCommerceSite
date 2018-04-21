@@ -25,8 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $gamepacks = Gamepack::find(1);
-        $games = Game::where('gamepack_id', 1)->get();
+        $gamepacks = Gamepack::all();
+        foreach($gamepacks as $gamepack)
+        {
+            $games[$gamepack->id] = Game::where('gamepack_id', $gamepack->id)->get();
+        }
+        
         return view('home', ["gamepacks" => $gamepacks, "games" => $games]);
     }
 }

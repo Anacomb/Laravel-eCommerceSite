@@ -13,23 +13,23 @@ class GamepackTableSeeder extends Seeder
     public function run()
     {
         Gamepack::Create([
-        	"name" => "Dark Souls Pack",
+        	"name" => "Dark Souls",
         	"slug" =>"dark-souls-pack"
         ]);
 
         Gamepack::Create([
-        	"name" => "Zelda Pack",
-        	"slug" =>"zelda-pack"
+        	"name" => "Warcraft",
+        	"slug" =>"warcraft-pack"
         ]);
 
         Gamepack::Create([
-        	"name" => "Assassin's Creed Pack",
-        	"slug" =>"assassins-creed-pack"
+        	"name" => "Stratégie",
+        	"slug" =>"strategy-pack"
         ]);
 
         Gamepack::Create([
-        	"name" => "Tomb Raider Pack",
-        	"slug" =>"tomb-raider-pack"
+        	"name" => "Action",
+        	"slug" =>"action-pack"
         ]);
     }
 }
