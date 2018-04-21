@@ -36,7 +36,7 @@ return [
     ],
 
     'igdb' => [
-        'key' => '22ef6273d8537628cce0c80efbeab308',
+        'key' => '5237251183c3b3e7361cd436128f4273',
         'url' => 'https://api-endpoint.igdb.com'
     ]
 

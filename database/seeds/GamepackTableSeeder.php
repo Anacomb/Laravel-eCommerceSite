@@ -31,5 +31,20 @@ class GamepackTableSeeder extends Seeder
         	"name" => "Action",
         	"slug" =>"action-pack"
         ]);
+
+        Gamepack::Create([
+            "name" => "Need For Speed",
+            "slug" =>"need-for-speed-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "The Elder Scrolls",
+            "slug" =>"the-elder-scrolls-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Total War",
+            "slug" =>"total-war-pack"
+        ]);
     }
 }

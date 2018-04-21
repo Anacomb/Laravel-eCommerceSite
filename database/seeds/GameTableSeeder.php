@@ -102,6 +102,8 @@ class GameTableSeeder extends Seeder
 	        	]);    
         	}
         	$i++;            
-        }             
+        }
+
+                     
     }
 }
