@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $gamepacks = Gamepack::all();
+        $gamepacks = Gamepack::all()[0]->paginate(6);
         foreach($gamepacks as $gamepack)
         {
             $games[$gamepack->id] = Game::where('gamepack_id', $gamepack->id)->get();
