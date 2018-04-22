@@ -152,6 +152,8 @@ return [
          */
         //Collective\Html\HtmlServiceProvider::class,
         Messerli90\IGDB\IGDBServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Grimthorr\LaravelToast\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -213,6 +215,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'IGDB' => \Messerli90\IGDB\Facades\IGDB::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Toast' => Grimthorr\LaravelToast\Facade\Toast::class
 
     ],
 

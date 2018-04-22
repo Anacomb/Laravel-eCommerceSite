@@ -16,7 +16,7 @@
                         <div style="display: inline-table;">    
                             @foreach ($games[$gamepack->id] as $game)
                                 @if ($loop->iteration <= 4)
-                                        <img class="card-img-top" src="{{$game->image}}" alt="Card image cap" style="width:150px; height:200px;">
+                                        <img class="card-img-top game-cover" src="{{$game->image}}" alt="Card image cap">
                                 @endif
                             @endforeach 
                         </div>  

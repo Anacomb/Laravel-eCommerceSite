@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Gamepack;
 use App\Game;
+use Toast;
 
 class HomeController extends Controller
 {
@@ -32,5 +33,15 @@ class HomeController extends Controller
         }
         
         return view('home', ["gamepacks" => $gamepacks, "games" => $games]);
+    }
+
+    public function details($slug)
+    {
+        $gamepack = Gamepack::where('slug', '=', $slug)->first();
+        $games[$gamepack->id] = Game::where('gamepack_id', $gamepack->id)->get();
+
+        Toast::message('message', 'success', 'title');
+        
+        return view('gamepack', ["gamepack" => $gamepack, "games" => $games]);
     }
 }

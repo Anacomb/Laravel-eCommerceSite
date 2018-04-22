@@ -18,3 +18,4 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/packs/{slug}', 'HomeController@details')->name('pack-details');
