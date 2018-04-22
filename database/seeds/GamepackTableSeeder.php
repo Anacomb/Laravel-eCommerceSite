@@ -46,5 +46,60 @@ class GamepackTableSeeder extends Seeder
             "name" => "Total War",
             "slug" =>"total-war-pack"
         ]);
+
+        Gamepack::Create([
+            "name" => "FPS",
+            "slug" =>"fps-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Hack and Slash",
+            "slug" =>"hack-and-slash-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Combat",
+            "slug" =>"combat-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Gestion",
+            "slug" =>"gestion-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Paradox Interactive",
+            "slug" =>"pi-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Telltale Games",
+            "slug" =>"ttg-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Fallout",
+            "slug" =>"fallout-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Simulation",
+            "slug" =>"simulation-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Call of Duty",
+            "slug" =>"cod-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Tom Clancy's",
+            "slug" =>"tom-clancys-pack"
+        ]);
+
+        Gamepack::Create([
+            "name" => "Assassin's Creed",
+            "slug" =>"ac-pack"
+        ]);
     }
 }
