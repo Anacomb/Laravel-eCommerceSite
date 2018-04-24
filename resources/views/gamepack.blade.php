@@ -64,10 +64,10 @@
         </button>
 
         <!-- Modal -->
-        <div class="modal fade bd-example-modal-lg" id="packModal" tabindex="-1" role="dialog" aria-labelledby="packModalLabel" aria-hidden="true">
+        <div class="modal fade bd-example-modal-lg noBorder" id="packModal" tabindex="-1" role="dialog" aria-labelledby="packModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-              <div class="modal-header bg-primary">
+              <div class="modal-header bg-primary noBorder">
                 <h5 class="modal-title text-light" id="packModalLabel">{{$game->name}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -81,7 +81,7 @@
                 <p> <b>Description du jeu : </b>{{$game->description}}</p>
                 
               </div>
-              <div class="modal-footer bg-primary">
+              <div class="modal-footer bg-primary noBorder">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
