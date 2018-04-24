@@ -6,38 +6,39 @@
         <div class="justify-content-center bg-dark details">
             <h1 class="text-light display-1">Pack {{$gamepack->name}}</h1>  
             <br/>    
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div id="games-carousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     @foreach ($games[$gamepack->id] as $game)
                     
                     @if ($loop->iteration == 1)
-                            <li data-target="#carousel-example-generic" data-slide-to="{{$loop->iteration-1}}" class="active"></li>
+                            <li data-target="#games-carousel" data-slide-to="{{$loop->iteration-1}}" class="active"></li>
                         @else
-                            <li data-target="#carousel-example-generic" data-slide-to="{{$loop->iteration-1}}"></li>
+                            <li data-target="#games-carousel" data-slide-to="{{$loop->iteration-1}}"></li>
                         @endif
                     @endforeach
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     @foreach ($games[$gamepack->id] as $game)
                         @if ($loop->iteration == 1)
-                            <div class="carousel-item active">
+                            <div class="d-block w-100 active">
                         @else
-                            <div class="carousel-item">
+                            <div class="d-block w-100">
                         @endif
                                 <img class="carousel-cover" src="{{$game->image}}" alt="{{$game->name}}">
                             </div>
                     @endforeach 
                 </div>
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <i class="fas fa-chevron-left"></i>
+                  <a class="carousel-control-prev" href="#games-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#games-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
-                </a>
+                  </a>
             </div>
             <br/>    
+            {{request()->fullPath()}}
             <h2 class="text-light">Contenu du pack :</h2>
             <ul>
                 @foreach ($games[$gamepack->id] as $game)
