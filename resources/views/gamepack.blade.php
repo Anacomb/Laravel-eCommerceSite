@@ -41,7 +41,7 @@
             <h2 class="text-light">Contenu du pack :</h2>
             <ul>
                 @foreach ($games[$gamepack->id] as $game)
-                    <li class="text-light">{{$game->name}}</li>
+                    <a href="#{{$game->id}}" data-toggle="modal" data-target="#packModal"><li class="text-light">{{$game->name}}</li></a>
                 @endforeach
             </ul>
             <br/>    
@@ -55,6 +55,36 @@
                     </div>
                 @endforeach
             @endif
+        </div>
+
+                <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#packModal">
+          WOAHOU
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" id="packModal" tabindex="-1" role="dialog" aria-labelledby="packModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header bg-primary">
+                <h5 class="modal-title text-light" id="packModalLabel">{{$game->name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body bg-dark text-light">
+                
+                <img class="info" src="{{$game->image}}" alt="Card image cap"><br/>         
+                <p> <b>Date de sortie du jeu : </b> {{$game->release_date}}</p><br/>
+                <p> <b>Genres associés au jeu : </b>{{$game->genre}}</p><br/>
+                <p> <b>Description du jeu : </b>{{$game->description}}</p>
+                
+              </div>
+              <div class="modal-footer bg-primary">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 </div>
