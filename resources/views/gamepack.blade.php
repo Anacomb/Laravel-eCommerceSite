@@ -20,9 +20,9 @@
                 <div class="carousel-inner" role="listbox">
                     @foreach ($games[$gamepack->id] as $game)
                         @if ($loop->iteration == 1)
-                            <div class="d-block w-100 active">
+                            <div class="carousel-item active">
                         @else
-                            <div class="d-block w-100">
+                            <div class="carousel-item">
                         @endif
                                 <img class="carousel-cover" src="{{$game->image}}" alt="{{$game->name}}">
                             </div>
@@ -38,7 +38,7 @@
                   </a>
             </div>
             <br/>    
-            {{request()->fullPath()}}
+            {{request()->path()}}
             <h2 class="text-light">Contenu du pack :</h2>
             <ul>
                 @foreach ($games[$gamepack->id] as $game)
