@@ -8,9 +8,14 @@
             <br/>    
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="0"></li>
+                    @foreach ($games[$gamepack->id] as $game)
+                    
+                    @if ($loop->iteration == 1)
+                            <li data-target="#carousel-example-generic" data-slide-to="{{$loop->iteration-1}}" class="active"></li>
+                        @else
+                            <li data-target="#carousel-example-generic" data-slide-to="{{$loop->iteration-1}}"></li>
+                        @endif
+                    @endforeach
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     @foreach ($games[$gamepack->id] as $game)
@@ -24,11 +29,11 @@
                     @endforeach 
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="icon-prev" aria-hidden="true"></span>
+                    <i class="fas fa-chevron-left"></i>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="icon-next" aria-hidden="true"></span>
+                    <i class="fas fa-chevron-right"></i>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
