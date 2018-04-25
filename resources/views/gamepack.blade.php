@@ -42,46 +42,41 @@
             <h2 class="text-light text-center">Contenu du pack :</h2>
             <ul style="list-style-type: none; padding: 0;">
                 @foreach ($games[$gamepack->id] as $game)
-                    <a href="#{{$game->id}}" data-toggle="modal" data-target="#packModal"><li class="text-light">{{$game->name}}</li></a>
+                    <a href="#" data-toggle="modal" data-target="#packModal{{$loop->iteration}}"><li class="text-light">{{$game->name}}</li></a>
                 @endforeach
             </ul>
             <br/>    
             <a href="/" class="btn btn-primary btn-lg"><i class="fas fa-shopping-cart"></i> Ajouter au panier</a>
-            @if(Session::has('toasts'))
-                @foreach(Session::get('toasts') as $toast)
-                    <div class="alert alert-{{ $toast['level'] }}">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      
-                      {{ $toast['message'] }}
-                    </div>
-                @endforeach
-            @endif
+            <br/><br/>
+
         </div>
 
         <!-- Modal -->
-        <div class="modal fade bd-example-modal-lg noBorder" id="packModal" tabindex="-1" role="dialog" aria-labelledby="packModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header bg-primary noBorder">
-                <h5 class="modal-title text-light" id="packModalLabel">{{$game->name}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body bg-dark text-light text-center">
-                
-                <img class="info" src="{{$game->image}}" alt="Card image cap"><br/>         
-                <p> <b>Date de sortie du jeu : </b> {{$game->release_date}}</p><br/>
-                <p> <b>Genres associés au jeu : </b>{{$game->genre}}</p><br/>
-                <p> <b>Description du jeu : </b>{{$game->description}}</p>
-                
-              </div>
-              <div class="modal-footer bg-primary noBorder">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        @foreach ($games[$gamepack->id] as $game)
+            <div class="modal fade bd-example-modal-lg noBorder" id="packModal{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="packModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary noBorder">
+                    <h5 class="modal-title text-light" id="packModalLabel">{{$game->name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body bg-dark text-light text-center">
+                    
+                    <img class="info" src="{{$game->image}}" alt="Card image cap"><br/>         
+                    <p> <b>Date de sortie du jeu : </b> {{$game->release_date}}</p><br/>
+                    <p> <b>Genres associés au jeu : </b>{{$game->genre}}</p><br/>
+                    <p> <b>Description du jeu : </b>{{$game->description}}</p>
+                    
+                  </div>
+                  <div class="modal-footer bg-primary noBorder">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection
