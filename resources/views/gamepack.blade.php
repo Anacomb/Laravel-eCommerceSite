@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
     <div class="col-md-12">
-        <div class="justify-content-center bg-dark details">
+        <div class="justify-content-center bg-dark details text-center">
             <h1 class="text-light display-1">Pack {{$gamepack->name}}</h1>  
             <br/>    
-            <div id="games-carousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
+            <div id="games-carousel" class="carousel slide"  data-ride="carousel">
+                <ol class="carousel-indicators carouselPos" >
                     @foreach ($games[$gamepack->id] as $game)
                     
                     @if ($loop->iteration == 1)
@@ -38,8 +38,8 @@
                   </a>
             </div>
             <br/>    
-            {{request()->path()}}
-            <h2 class="text-light">Contenu du pack :</h2>
+            
+            <h2 class="text-light text-center">Contenu du pack :</h2>
             <ul>
                 @foreach ($games[$gamepack->id] as $game)
                     <a href="#{{$game->id}}" data-toggle="modal" data-target="#packModal"><li class="text-light">{{$game->name}}</li></a>
@@ -58,11 +58,6 @@
             @endif
         </div>
 
-                <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#packModal">
-          WOAHOU
-        </button>
-
         <!-- Modal -->
         <div class="modal fade bd-example-modal-lg noBorder" id="packModal" tabindex="-1" role="dialog" aria-labelledby="packModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
@@ -73,7 +68,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body bg-dark text-light">
+              <div class="modal-body bg-dark text-light text-center">
                 
                 <img class="info" src="{{$game->image}}" alt="Card image cap"><br/>         
                 <p> <b>Date de sortie du jeu : </b> {{$game->release_date}}</p><br/>
