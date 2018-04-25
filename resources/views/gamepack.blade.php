@@ -40,7 +40,7 @@
             <br/>    
             
             <h2 class="text-light text-center">Contenu du pack :</h2>
-            <ul>
+            <ul style="list-style-type: none; padding: 0;">
                 @foreach ($games[$gamepack->id] as $game)
                     <a href="#{{$game->id}}" data-toggle="modal" data-target="#packModal"><li class="text-light">{{$game->name}}</li></a>
                 @endforeach
