@@ -18,4 +18,12 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/packs/{slug}', 'HomeController@details')->name('pack-details');
+
+Route::get('/add-to-cart/{packID}', 'HomeController@addToCart')->name('cart-addToCart');
+Route::get('/cart', 'HomeController@showCart')->name('cart-showCart');
+Route::get('/removeFromCart/{productId}', 'HomeController@removeFromCart')->name('cart-delete');
+Route::get('/banGame', 'HomeController@banGame')->name('cart-banGame');
+
+Route::get('/proceedPayment', 'HomeController@proceedPayment')->name('payment-proceedPayment');

@@ -46,7 +46,8 @@
                 @endforeach
             </ul>
             <br/>    
-            <a href="/" class="btn btn-primary btn-lg"><i class="fas fa-shopping-cart"></i> Ajouter au panier</a>
+
+            <a class="btn btn-primary btn-lg" href="{{ route('cart-addToCart', ['packId' => $gamepack->id]) }}"><i class="fas fa-shopping-cart"></i> Ajouter au panier</a>
             <br/><br/>
 
         </div>
@@ -78,5 +79,6 @@
             </div>
         @endforeach
     </div>
+</div>
 </div>
 @endsection
