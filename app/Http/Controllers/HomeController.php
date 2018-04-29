@@ -114,7 +114,7 @@ class HomeController extends Controller
                 }
             }
         }
-        //Cart::destroy();
+        Cart::destroy();
         return view('payment', ['lottery' => $lottery, 'serials' => $serials]);
     }
 }

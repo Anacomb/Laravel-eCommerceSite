@@ -5,7 +5,7 @@
         <div class="jumbotron jumbotron-fluid bg-dark text-light" style="border-top-left-radius: 20px;border-top-right-radius: 20px;">
             <div class="col-md-12  ">
                 <h1 class="display-4">Félicitations !</h1>
-                <p class="lead">Retrouver vos jeux ci-dessous <i class="fas fa-arrow-down"></i></p>
+                <p class="lead">Retrouvez vos jeux ci-dessous <i class="fas fa-arrow-down"></i></p>
             </div>
         </div>
         <div class="row">
