@@ -16,4 +16,4 @@
 
 ## Cadre de développement :
 
-Projet créé dans le cadre de mes études à l'Université du Québec à Chicoutimi au Canada en collaboration avec ==[Chwar](https://github.com/chwar)==. 
+Projet créé dans le cadre de mes études à l'Université du Québec à Chicoutimi au Canada en collaboration avec [Chwar](https://github.com/chwar). 
